@@ -3,203 +3,169 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>The Milk Challenge - Official Event Guidelines</title>
-  
-  <!-- Google Fonts for authentic Minted typography -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400;1,600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&family=Alex+Brush&display=swap" rel="stylesheet">
-  <script src="https://cdn.tailwindcss.com"></script>
-  
+  <title>Milk Challenge Official Rules - Angela & Ricky</title>
   <style>
+    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Lora:ital,wght@0,400;0,500;1,400&display=swap');
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
     body {
-      font-family: 'Cormorant Garamond', Georgia, serif;
-      background-color: #fcfcfb;
-      color: #6a7059;
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
-    }
-
-    .font-serif-header {
-      font-family: 'Cormorant Garamond', Georgia, serif;
-    }
-
-    .font-script {
-      font-family: 'Alex Brush', cursive;
-    }
-
-    .color-olive-main {
-      color: #6a7059;
-    }
-
-    .color-olive-sub {
-      color: #8b907c;
-    }
-
-    .color-olive-accent {
-      color: #585e49;
-    }
-
-    /* Minted style card border */
-    .rule-card {
       background-color: #ffffff;
-      border: 1px solid #e2e4da;
-      box-shadow: 0 4px 12px rgba(106, 112, 89, 0.05);
-    }
-
-    .warning-card {
-      background-color: #fdfbf7;
-      border: 1px solid #d9d2be;
-    }
-
-    /* Pill button styled like the RSVP button */
-    .btn-blue-pill {
-      background: linear-gradient(180deg, #60a5fa 0%, #3b82f6 100%);
-      color: #ffffff;
-      box-shadow: 0 4px 14px rgba(59, 130, 246, 0.35);
-      transition: all 0.2s ease-in-out;
-    }
-
-    .btn-blue-pill:hover {
-      transform: translateY(-1px);
-      box-shadow: 0 6px 18px rgba(59, 130, 246, 0.45);
-    }
-
-    .btn-blue-pill:active {
-      transform: translateY(1px);
-    }
-
-    .thin-divider {
-      height: 1px;
-      background-color: #cbcebe;
-      width: 42px;
+      font-family: 'Lora', serif;
+      color: #6b705c;
+      text-align: center;
+      padding: 40px 20px 80px 20px;
+      max-width: 480px;
       margin: 0 auto;
+    }
+
+    .names {
+      font-family: 'Lora', serif;
+      font-size: 16px;
+      letter-spacing: 1px;
+      color: #a3a398;
+      margin-bottom: 25px;
+    }
+
+    .main-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 30px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: #6b705c;
+      margin-bottom: 8px;
+      font-weight: 400;
+    }
+
+    .subtitle {
+      font-size: 14px;
+      font-style: italic;
+      color: #8c9080;
+      margin-bottom: 20px;
+    }
+
+    .divider-line {
+      width: 40px;
+      height: 1px;
+      background-color: #a3a398;
+      margin: 0 auto 35px auto;
+    }
+
+    .rule-section {
+      margin-bottom: 30px;
+      text-align: left;
+      background-color: #fcfdfb;
+      border: 1px solid #f0f2eb;
+      padding: 20px;
+      border-radius: 8px;
+    }
+
+    .section-header {
+      font-family: 'Playfair Display', serif;
+      font-size: 20px;
+      letter-spacing: 1px;
+      color: #6b705c;
+      margin-bottom: 12px;
+      font-weight: 400;
+      text-align: center;
+    }
+
+    .rule-list {
+      list-style-type: disc;
+      padding-left: 20px;
+      font-size: 14px;
+      line-height: 1.7;
+      color: #5a5e50;
+    }
+
+    .rule-list li {
+      margin-bottom: 10px;
+    }
+
+    .rule-list li:last-child {
+      margin-bottom: 0;
+    }
+
+    .olive-illustration {
+      width: 90px;
+      margin: 20px auto;
+      opacity: 0.85;
+      display: block;
+    }
+
+    .btn-container {
+      margin-top: 35px;
+    }
+
+    .btn-blue {
+      display: inline-block;
+      background-color: #60a5fa;
+      color: #ffffff;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      text-decoration: none;
+      padding: 14px 28px;
+      border-radius: 20px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.15);
     }
   </style>
 </head>
-<body class="min-h-screen flex flex-col justify-between items-center px-4 py-8 md:py-12 select-none">
+<body>
 
-  <main class="w-full max-w-md mx-auto text-center flex-grow flex flex-col items-center">
-    
-    <!-- Top Small Subtitle -->
-    <div class="text-xs md:text-sm tracking-widest text-[#a3a398] font-normal mb-6 uppercase" style="letter-spacing: 0.2em;">
-      Angela &amp; Ricky's Engagement Weekend
-    </div>
+  <div class="names">Ricky & Angela</div>
 
-    <!-- Main Title -->
-    <h1 class="text-3xl md:text-4xl color-olive-main font-normal tracking-widest uppercase mb-2" style="letter-spacing: 0.15em;">
-      The Milk Challenge
-    </h1>
+  <h1 class="main-title">Milk Challenge</h1>
+  <p class="subtitle">Official Competition Guidelines & Bylaws</p>
+  <div class="divider-line"></div>
 
-    <div class="text-sm color-olive-sub italic mb-4">
-      Official Rules, Regulations &amp; Disqualification Terms
-    </div>
-
-    <!-- Thin Divider -->
-    <div class="thin-divider mb-8"></div>
-
-    <section class="w-full rule-card rounded-2xl p-6 mb-6 text-left">
-      <div class="flex items-center space-x-2 mb-3">
-        <span class="text-xs font-semibold uppercase tracking-widest text-[#a3a398]">Section 1</span>
-        <span class="text-xs color-olive-sub">•</span>
-        <h2 class="text-xl color-olive-main font-semibold tracking-wide">Specifications</h2>
-      </div>
-      <ul class="text-base color-olive-sub space-y-2.5 leading-relaxed list-disc list-inside">
-        <li><strong class="color-olive-accent font-medium">Dairy Standard:</strong> Whole milk only. No substitutes.</li>
-        <li><strong class="color-olive-accent font-medium">Vessel Requirements:</strong> Clear container only (1.89L / Half Gallon minimum).</li>
-        <li><strong class="color-olive-accent font-medium">Pre-Approved Flavors:</strong> Chocolate, strawberry, or caramel syrup are permitted.</li>
-        <li><strong class="color-olive-accent font-medium">Custom Flavors:</strong> Any other flavors must be submitted to and evaluated by the official group chat prior to kickoff.</li>
-      </ul>
-    </section>
-
-    <div class="my-3 w-full flex justify-center items-center">
-      <svg width="100" height="36" viewBox="0 0 120 48" fill="none" xmlns="http://www.w3.org/2000/svg" class="opacity-70">
-        <path d="M10 24C35 24 50 20 60 24C70 28 85 24 110 24" stroke="#6a7059" stroke-width="1" stroke-linecap="round"/>
-        <path d="M30 23C27 16 20 15 22 22C24 29 30 23 30 23Z" fill="#6a7059" opacity="0.2" stroke="#6a7059" stroke-width="0.8"/>
-        <path d="M48 21C43 13 36 14 39 20C42 26 48 21 48 21Z" fill="#6a7059" opacity="0.2" stroke="#6a7059" stroke-width="0.8"/>
-        <path d="M68 24C65 17 58 17 60 23C62 29 68 24 68 24Z" fill="#6a7059" opacity="0.2" stroke="#6a7059" stroke-width="0.8"/>
-        <path d="M88 24C83 16 76 17 79 23C82 29 88 24 88 24Z" fill="#6a7059" opacity="0.2" stroke="#6a7059" stroke-width="0.8"/>
-      </svg>
-    </div>
-
-    <section class="w-full rule-card rounded-2xl p-6 mb-6 text-left">
-      <div class="flex items-center space-x-2 mb-3">
-        <span class="text-xs font-semibold uppercase tracking-widest text-[#a3a398]">Section 2</span>
-        <span class="text-xs color-olive-sub">•</span>
-        <h2 class="text-xl color-olive-main font-semibold tracking-wide">Timing &amp; Vessels</h2>
-      </div>
-      <ul class="text-base color-olive-sub space-y-2.5 leading-relaxed list-disc list-inside">
-        <li><strong class="color-olive-accent font-medium">Time Limit:</strong> Strictly 15 minutes on the clock.</li>
-        <li><strong class="color-olive-accent font-medium">Initial State:</strong> All milk must start fully contained inside the half-gallon jug before starting the timer.</li>
-        <li><strong class="color-olive-accent font-medium">Alternative Vessels:</strong> If using a cup, bowl, or secondary vessel, the timer MUST be running before you begin pouring.</li>
-      </ul>
-
-      <!-- DQ Alert Sub-card -->
-      <div class="warning-card rounded-xl p-4 mt-4 border-l-4 border-l-amber-600">
-        <span class="text-xs font-semibold uppercase tracking-wider text-amber-800 block mb-1">Disqualification Penalty</span>
-        <p class="text-sm color-olive-sub leading-normal">
-          If you pour milk into another vessel <strong>AND</strong> fail to finish the entire half gallon, your entry will be automatically <strong>DQ'd</strong> and you will receive the <strong>last pick</strong> in the draft.
-        </p>
-      </div>
-    </section>
-
-    <section class="w-full rule-card rounded-2xl p-6 mb-6 text-left">
-      <div class="flex items-center space-x-2 mb-3">
-        <span class="text-xs font-semibold uppercase tracking-widest text-[#a3a398]">Section 3</span>
-        <span class="text-xs color-olive-sub">•</span>
-        <h2 class="text-xl color-olive-main font-semibold tracking-wide">Incompletion Protocol</h2>
-      </div>
-      <p class="text-sm color-olive-sub mb-3">
-        If you fail to finish within the allotted 15 minutes, you must complete the following steps immediately:
-      </p>
-      <ol class="text-base color-olive-sub space-y-2 leading-relaxed list-decimal list-inside pl-1">
-        <li>Place your bottle on a flat surface and take a photo showing the clear water/liquid level.</li>
-        <li>Measure remaining milk from the bottom of the jug to the liquid line.</li>
-        <li>Submit photographic evidence of the physical measurement to the group chat.</li>
-      </ol>
-    </section>
-
-    <section class="w-full rule-card rounded-2xl p-6 mb-8 text-left">
-      <div class="flex items-center space-x-2 mb-3">
-        <span class="text-xs font-semibold uppercase tracking-widest text-[#a3a398]">Section 4</span>
-        <span class="text-xs color-olive-sub">•</span>
-        <h2 class="text-xl color-olive-main font-semibold tracking-wide">Probation &amp; Removal</h2>
-      </div>
-      <ul class="text-base color-olive-sub space-y-2.5 leading-relaxed list-disc list-inside">
-        <li><strong class="color-olive-accent font-medium">Opt-Out Status:</strong> If you choose not to compete, you will automatically be placed on <em class="text-red-700">Probation</em>.</li>
-        <li><strong class="color-olive-accent font-medium">Removal Rule:</strong> Placing on probation <strong>2 years in a row</strong> results in immediate removal/kick from the group.</li>
-      </ul>
-    </section>
-
-    <!-- Sign-off -->
-    <div class="mb-24">
-      <p class="font-script text-2xl color-olive-sub opacity-90">
-        May the best stomach win,<br>Angela &amp; Ricky
-      </p>
-    </div>
-
-  </main>
-
-  <div class="fixed bottom-6 left-0 right-0 z-50 flex justify-center items-center pointer-events-none">
-    <button onclick="acknowledgeRules()" class="pointer-events-auto btn-blue-pill text-white text-xs md:text-sm font-semibold uppercase tracking-widest px-8 py-3.5 rounded-full focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-offset-2">
-      I Acknowledge The Rules
-    </button>
+  <!-- Section 1: Vessel & Liquid Guidelines -->
+  <div class="rule-section">
+    <h2 class="section-header">Equipment & Ingredients</h2>
+    <ul class="rule-list">
+      <li><strong>Dairy Standard:</strong> Whole milk only.</li>
+      <li><strong>Vessel Requirements:</strong> Must be served in a clear container holding a 1.89L minimum capacity (half gallon).</li>
+      <li><strong>Flavoring Regulations:</strong> Chocolate, strawberry, and caramel syrup are strictly allowed. Any alternative flavors must be evaluated and approved by the group chat prior to start time.</li>
+    </ul>
   </div>
 
-  <script>
-    function acknowledgeRules() {
-      const toast = document.createElement('div');
-      toast.className = 'fixed top-6 left-1/2 transform -translate-x-1/2 bg-[#6a7059] text-white px-6 py-3 rounded-full text-sm font-serif shadow-lg z-50 opacity-0 transition-opacity duration-300 text-center max-w-xs';
-      toast.innerText = 'Acknowledgement recorded. Good luck with the gallon!';
-      document.body.appendChild(toast);
-      
-      setTimeout(() => { toast.classList.add('opacity-100'); }, 10);
-      setTimeout(() => { 
-        toast.classList.remove('opacity-100');
-        setTimeout(() => toast.remove(), 300);
-      }, 3000);
-    }
-  </script>
+  <svg class="olive-illustration" viewBox="0 0 100 40" fill="none" stroke="#6b705c" stroke-width="1.2">
+    <path d="M10,20 Q50,5 90,20" />
+    <path d="M30,16 C25,10 20,12 22,18 C24,24 30,20 30,16 Z" fill="#ffffff" />
+    <path d="M50,12 C45,6 40,8 42,14 C44,20 50,16 50,12 Z" fill="#ffffff" />
+    <path d="M70,16 C65,10 60,12 62,18 C64,24 70,20 70,16 Z" fill="#ffffff" />
+  </svg>
+
+  <!-- Section 2: Timing & Mechanics -->
+  <div class="rule-section">
+    <h2 class="section-header">Timing & Pouring Rules</h2>
+    <ul class="rule-list">
+      <li><strong>Time Limit:</strong> Competitors have exactly 15 minutes to finish.</li>
+      <li><strong>Initial Setup:</strong> All liquid must reside inside the primary half-gallon jug before starting the timer.</li>
+      <li><strong>Alternative Vessels:</strong> If using a secondary cup, bowl, or vessel, the official timer MUST be running before any pouring begins.</li>
+    </ul>
+  </div>
+
+  <!-- Section 3: Incomplete Finishes & Disqualifications -->
+  <div class="rule-section">
+    <h2 class="section-header">Measurement & Penalties</h2>
+    <ul class="rule-list">
+      <li><strong>Incomplete Finish Protocol:</strong> If you do not finish within the 15-minute limit, you must place your bottle on a level, flat surface to display the remaining water/milk line.</li>
+      <li><strong>Photo Evidence:</strong> A photograph measuring the distance from the bottom of the jug to the liquid level line is required for official verification.</li>
+      <li><strong>Disqualification Penalty:</strong> If you pour milk into an auxiliary vessel AND fail to finish the entire half gallon, your entry is automatically DQ'd and you will receive last pick.</li>
+      <li><strong>Probationary Clause:</strong> Opting out of competing places you on active probation. Failing to compete for 2 consecutive years results in removal from the league.</li>
+    </ul>
+  </div>
+
+  <div class="btn-container">
+    <a href="game.html" class="btn-blue">I Acknowledge the Rules</a>
+  </div>
 
 </body>
 </html>
