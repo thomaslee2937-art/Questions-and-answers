@@ -1,0 +1,23 @@
+name: Check HTML Links
+
+# Trigger the workflow on every push to the main branch
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  link-checker:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Step 1: Check out the repository code so the runner can access it
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      # Step 2: Run Lychee link checker against all HTML files
+      - name: Check Links
+        uses: lycheeververse/lychee-action@v1.9.0
+        with:
+          args: --verbose '*.html'
