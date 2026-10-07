@@ -1,9 +1,10 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Q & A - Angela & Ricky</title>
+  <title>Fantasy Football PPR ADP Game - Angela & Ricky</title>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Lora:ital,wght@0,400;0,500;1,400&display=swap');
 
@@ -18,115 +19,343 @@
       font-family: 'Lora', serif;
       color: #6b705c;
       text-align: center;
-      padding: 40px 20px 80px 20px;
-      max-width: 480px;
+      padding: 40px 20px 60px 20px;
+      max-width: 500px;
       margin: 0 auto;
     }
 
     .names {
       font-family: 'Lora', serif;
-      font-size: 16px;
+      font-size: 15px;
       letter-spacing: 1px;
       color: #a3a398;
-      margin-bottom: 25px;
+      margin-bottom: 20px;
     }
 
     .main-title {
       font-family: 'Playfair Display', serif;
-      font-size: 32px;
-      letter-spacing: 3px;
+      font-size: 28px;
+      letter-spacing: 2px;
       text-transform: uppercase;
       color: #6b705c;
-      margin-bottom: 12px;
+      margin-bottom: 8px;
       font-weight: 400;
     }
 
-    .divider-line {
-      width: 40px;
-      height: 1px;
-      background-color: #a3a398;
-      margin: 0 auto 35px auto;
+    .subtitle {
+      font-size: 14px;
+      color: #8c9080;
+      margin-bottom: 25px;
     }
 
-    .qa-container {
-      margin-bottom: 35px;
+    .scoreboard {
+      display: flex;
+      justify-content: space-around;
+      background-color: #f8f9f5;
+      border: 1px solid #e2e4db;
+      border-radius: 12px;
+      padding: 12px;
+      margin-bottom: 25px;
     }
 
-    .question {
+    .score-item {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .score-label {
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: #8c9080;
+    }
+
+    .score-val {
       font-family: 'Playfair Display', serif;
       font-size: 22px;
-      letter-spacing: 1.5px;
+      font-weight: 600;
       color: #6b705c;
-      margin-bottom: 14px;
-      font-weight: 400;
     }
 
-    .answer {
-      font-size: 15px;
-      line-height: 1.6;
-      color: #5a5e50;
-      padding: 0 10px;
+    .card {
+      background-color: #ffffff;
+      border: 1px solid #d4d7ca;
+      border-radius: 12px;
+      padding: 20px;
+      margin-bottom: 15px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+      position: relative;
     }
 
-    .olive-illustration {
-      width: 110px;
-      margin: 25px auto 35px auto;
-      opacity: 0.85;
+    .card-label {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: #a3a398;
+      margin-bottom: 6px;
     }
 
-    .btn-container {
-      margin-top: 40px;
+    .player-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 22px;
+      color: #6b705c;
+      margin-bottom: 4px;
     }
 
-    .btn-blue {
+    .player-details {
+      font-size: 13px;
+      color: #8c9080;
+      margin-bottom: 10px;
+    }
+
+    .adp-display {
+      font-size: 18px;
+      font-weight: 600;
+      color: #4a4d40;
+      background-color: #f1f3ed;
+      padding: 8px 16px;
+      border-radius: 20px;
       display: inline-block;
+    }
+
+    .vs-circle {
+      width: 36px;
+      height: 36px;
+      background-color: #6b705c;
+      color: #ffffff;
+      font-family: 'Playfair Display', serif;
+      font-size: 14px;
+      font-weight: 600;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: -10px auto 10px auto;
+      position: relative;
+      z-index: 2;
+    }
+
+    .btn-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-top: 15px;
+    }
+
+    .btn-action {
       background-color: #60a5fa;
       color: #ffffff;
+      border: none;
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
       font-size: 13px;
       font-weight: 600;
       letter-spacing: 1px;
       text-transform: uppercase;
-      text-decoration: none;
-      padding: 12px 28px;
+      padding: 12px;
       border-radius: 20px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+      cursor: pointer;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      transition: opacity 0.2s;
+    }
+
+    .btn-action:hover {
+      opacity: 0.9;
+    }
+
+    .btn-action:disabled {
+      background-color: #cbd5e1;
+      cursor: not-allowed;
+    }
+
+    .feedback {
+      margin-top: 15px;
+      font-size: 15px;
+      font-weight: 500;
+      min-height: 24px;
+    }
+
+    .feedback.correct {
+      color: #16a34a;
+    }
+
+    .feedback.wrong {
+      color: #dc2626;
+    }
+
+    .btn-next {
+      margin-top: 15px;
+      background-color: #6b705c;
+      color: white;
+      border: none;
+      padding: 10px 24px;
+      border-radius: 20px;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      cursor: pointer;
+      display: none;
+    }
+
+    .note {
+      font-size: 11px;
+      color: #a3a398;
+      margin-top: 30px;
+      line-height: 1.4;
     }
   </style>
 </head>
 <body>
 
   <div class="names">Ricky & Angela</div>
+  <h1 class="main-title">PPR ADP Game</h1>
+  <p class="subtitle">Does Player B have a HIGHER or LOWER ADP than Player A?<br><small>(Earlier draft pick = Lower ADP number)</small></p>
 
-  <h1 class="main-title">Q & A</h1>
-  <div class="divider-line"></div>
-
-  <div class="qa-container">
-    <h2 class="question">Can I bring my children?</h2>
-    <p class="answer">
-      As much as we love your little ones and would love to have them, unfortunately the venue does not permit children in their hosting space.
-    </p>
+  <div class="scoreboard">
+    <div class="score-item">
+      <span class="score-label">Current Streak</span>
+      <span class="score-val" id="streak">0</span>
+    </div>
+    <div class="score-item">
+      <span class="score-label">High Score</span>
+      <span class="score-val" id="highscore">0</span>
+    </div>
   </div>
 
-  <!-- Olive Branch Accent Header -->
-  <svg class="olive-illustration" viewBox="0 0 100 40" fill="none" stroke="#6b705c" stroke-width="1.2">
-    <path d="M10,20 Q50,5 90,20" />
-    <path d="M30,16 C25,10 20,12 22,18 C24,24 30,20 30,16 Z" fill="#ffffff" />
-    <path d="M50,12 C45,6 40,8 42,14 C44,20 50,16 50,12 Z" fill="#ffffff" />
-    <path d="M70,16 C65,10 60,12 62,18 C64,24 70,20 70,16 Z" fill="#ffffff" />
-  </svg>
-
-  <div class="qa-container">
-    <h2 class="question">What is the dress code?</h2>
-    <p class="answer">
-      Women are encouraged to wear cocktail attire, fall-themed dresses, and clothing.<br><br>
-      Men are <strong>REQUIRED</strong> to wear LeBron shorts (preferably produced and manufactured by Ronnie Fieg).
-    </p>
+  <!-- Player A (Base Player) -->
+  <div class="card" id="cardA">
+    <div class="card-label">Base Player</div>
+    <div class="player-name" id="pA-name">Ja'Marr Chase</div>
+    <div class="player-details" id="pA-details">WR • CIN</div>
+    <div class="adp-display" id="pA-adp">ADP: 2.4</div>
   </div>
 
-  <div class="btn-container">
-    <a href="challenge.html" class="btn-blue">RSVP</a>
+  <div class="vs-circle">VS</div>
+
+  <!-- Player B (Target Player) -->
+  <div class="card" id="cardB">
+    <div class="card-label">Compare With</div>
+    <div class="player-name" id="pB-name">Breece Hall</div>
+    <div class="player-details" id="pB-details">RB • NYJ</div>
+    <div class="adp-display" id="pB-adp">ADP: ???</div>
+
+    <div class="btn-grid" id="guessButtons">
+      <button class="btn-action" onclick="makeGuess('higher')">Higher ADP<br><small style="font-weight: normal; font-size: 10px;">(Drafted Later)</small></button>
+      <button class="btn-action" onclick="makeGuess('lower')">Lower ADP<br><small style="font-weight: normal; font-size: 10px;">(Drafted Earlier)</small></button>
+    </div>
   </div>
 
+  <div class="feedback" id="feedbackMsg"></div>
+  <button class="btn-next" id="nextBtn" onclick="nextRound()">Next Round</button>
+
+  <p class="note">ADP data based on standard 12-team PPR consensus redraft rankings.</p>
+
+  <script>
+    const players = [
+      { name: "Christian McCaffrey", pos: "RB", team: "SF", adp: 1.2 },
+      { name: "CeeDee Lamb", pos: "WR", team: "DAL", adp: 2.1 },
+      { name: "Tyreek Hill", pos: "WR", team: "MIA", adp: 2.8 },
+      { name: "Ja'Marr Chase", pos: "WR", team: "CIN", adp: 4.5 },
+      { name: "Justin Jefferson", pos: "WR", team: "MIN", adp: 5.2 },
+      { name: "Breece Hall", pos: "RB", team: "NYJ", adp: 6.0 },
+      { name: "Bijan Robinson", pos: "RB", team: "ATL", adp: 7.1 },
+      { name: "Amon-Ra St. Brown", pos: "WR", team: "DET", adp: 8.3 },
+      { name: "AJ Brown", pos: "WR", team: "PHI", adp: 9.8 },
+      { name: "Saquon Barkley", pos: "RB", team: "PHI", adp: 11.2 },
+      { name: "Jonathan Taylor", pos: "RB", team: "IND", adp: 13.5 },
+      { name: "Garrett Wilson", pos: "WR", team: "NYJ", adp: 14.8 },
+      { name: "Puka Nacua", pos: "WR", team: "LAR", adp: 16.0 },
+      { name: "Jahmyr Gibbs", pos: "RB", team: "DET", adp: 17.2 },
+      { name: "Marvin Harrison Jr.", pos: "WR", team: "ARI", adp: 19.5 },
+      { name: "Kyren Williams", pos: "RB", team: "LAR", adp: 21.0 },
+      { name: "Chris Olave", pos: "WR", team: "NO", adp: 24.3 },
+      { name: "Josh Allen", pos: "QB", team: "BUF", adp: 23.1 },
+      { name: "Patrick Mahomes", pos: "QB", team: "KC", adp: 29.4 },
+      { name: "Lamar Jackson", pos: "QB", team: "BAL", adp: 32.8 },
+      { name: "Travis Kelce", pos: "TE", team: "KC", adp: 28.5 },
+      { name: "Sam LaPorta", pos: "TE", team: "DET", adp: 31.0 },
+      { name: "Trey McBride", pos: "TE", team: "ARI", adp: 38.2 },
+      { name: "De'Von Achane", pos: "RB", team: "MIA", adp: 22.4 },
+      { name: "Derrick Henry", pos: "RB", team: "BAL", adp: 20.1 },
+      { name: "Mike Evans", pos: "WR", team: "TB", adp: 33.6 },
+      { name: "Davante Adams", pos: "WR", team: "LV", adp: 26.2 },
+      { name: "Isiah Pacheco", pos: "RB", team: "KC", adp: 25.0 }
+    ];
+
+    let currentStreak = 0;
+    let highScore = 0;
+    let playerA = {};
+    let playerB = {};
+
+    function getRandomPlayer(excludeId = null) {
+      let filtered = players;
+      if (excludeId !== null) {
+        filtered = players.filter(p => p.name !== excludeId);
+      }
+      return filtered[Math.floor(Math.random() * filtered.length)];
+    }
+
+    function initRound() {
+      if (!playerB.name) {
+        playerA = getRandomPlayer();
+        playerB = getRandomPlayer(playerA.name);
+      } else {
+        playerA = playerB;
+        playerB = getRandomPlayer(playerA.name);
+      }
+
+      document.getElementById('pA-name').textContent = playerA.name;
+      document.getElementById('pA-details').textContent = `${playerA.pos} • ${playerA.team}`;
+      document.getElementById('pA-adp').textContent = `ADP: ${playerA.adp.toFixed(1)}`;
+
+      document.getElementById('pB-name').textContent = playerB.name;
+      document.getElementById('pB-details').textContent = `${playerB.pos} • ${playerB.team}`;
+      document.getElementById('pB-adp').textContent = 'ADP: ???';
+
+      document.getElementById('feedbackMsg').textContent = '';
+      document.getElementById('feedbackMsg').className = 'feedback';
+      document.getElementById('nextBtn').style.display = 'none';
+
+      const buttons = document.querySelectorAll('.btn-action');
+      buttons.forEach(btn => btn.disabled = false);
+    }
+
+    function makeGuess(guess) {
+      const buttons = document.querySelectorAll('.btn-action');
+      buttons.forEach(btn => btn.disabled = true);
+
+      document.getElementById('pB-adp').textContent = `ADP: ${playerB.adp.toFixed(1)}`;
+
+      const isHigher = playerB.adp > playerA.adp;
+      const isLower = playerB.adp < playerA.adp;
+
+      let correct = false;
+      if (guess === 'higher' && isHigher) correct = true;
+      if (guess === 'lower' && isLower) correct = true;
+      if (playerB.adp === playerA.adp) correct = true;
+
+      const feedback = document.getElementById('feedbackMsg');
+      if (correct) {
+        currentStreak++;
+        if (currentStreak > highScore) highScore = currentStreak;
+        feedback.textContent = `Correct! ${playerB.name} (${playerB.adp}) is ${isHigher ? 'higher' : 'lower'} than ${playerA.name} (${playerA.adp}).`;
+        feedback.className = 'feedback correct';
+      } else {
+        currentStreak = 0;
+        feedback.textContent = `Incorrect! ${playerB.name} (${playerB.adp}) is ${isHigher ? 'higher' : 'lower'} than ${playerA.name} (${playerA.adp}).`;
+        feedback.className = 'feedback wrong';
+      }
+
+      document.getElementById('streak').textContent = currentStreak;
+      document.getElementById('highscore').textContent = highScore;
+      document.getElementById('nextBtn').style.display = 'inline-block';
+    }
+
+    function nextRound() {
+      initRound();
+    }
+
+    initRound();
+  </script>
 </body>
 </html>
